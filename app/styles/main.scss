@@ -1,0 +1,29 @@
+$icon-font-path: '../fonts/';
+
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "bower_components/font-awesome/scss/font-awesome.scss";
+
+//my:scss
+@import "_menu.scss";
+
+.btn,.form-control {
+  border-radius: 0 !important;
+}
+$menuBackColor:#059DB8;
+$menuForeColor:#FFF;
+
+body {
+  padding:0;
+  margin:0;
+}
+
+.siteContainer {
+  width: 99%;
+  max-width: 960px;
+  margin:0 auto;
+  .topFirst {
+    margin-top:50px;
+  }
+}
+

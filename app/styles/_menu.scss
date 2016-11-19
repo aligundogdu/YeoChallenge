@@ -1,0 +1,76 @@
+$menuBackColor: #059DB8;
+$menuForeColor: #FFF;
+$menuForeHoverColor: #58c0c6;
+$menuHeight: 36px;
+$subMenuBackColor: #EFEFEF;
+$subMenuForeColor: #000;
+$standardPadding: 15px;
+$standardMargin: 15px;
+$brandHeader:#00BF9F;
+
+.topNav {
+  &,
+  ul,
+  div.subMenu {
+    padding: 0;
+    margin: 0;
+  }
+  position: relative;
+  height: $menuHeight;
+  line-height: $menuHeight;
+  background-color: $menuBackColor;
+  color: $menuForeColor;
+  ul.mainMenu {
+    margin-top: $standardMargin;
+    display: table;
+    list-style: none;
+    width: 100%;
+    li {
+      &.hasMenu {
+        background: url('../images/icon-down-arrow.png') $menuBackColor no-repeat center right;
+      }
+      display: table-cell;
+      a {
+        display: block;
+        color: $menuForeColor;
+        font-weight: bold;
+        text-decoration: none;
+        padding-left: $standardPadding;
+        &:hover {
+          color: $menuForeHoverColor;
+        }
+      }
+      a.btn-ask {
+        background: $brand-danger; //Extens from bootstrap variables (btn-danger)
+        &:hover {
+          color:$menuForeColor;
+        }
+      }
+      a.btn-store {
+        background: $brandHeader;
+        &:hover {
+          color:$menuForeColor;
+        }
+      }
+      div.subMenu {
+        right:0;
+        padding: 5px; //no standart padding
+        border: 1px solid $menuBackColor;
+        border-top:0;
+        display: none;
+        position: absolute;
+        width: 100%;
+        background-color: $subMenuBackColor;
+        color: $subMenuForeColor;
+      }
+      &:hover {
+        a {
+          color: $menuForeHoverColor;
+        }
+        div.subMenu {
+          display: block;
+        }
+      }
+    }
+  }
+}
