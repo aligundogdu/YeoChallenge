@@ -1,4 +1,4 @@
-Seo Challenge
+Yeo Challenge
 =============
 
 #How To
