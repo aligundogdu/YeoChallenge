@@ -2,15 +2,30 @@ $menuBackColor: #059DB8;
 $menuForeColor: #FFF;
 $menuForeHoverColor: #58c0c6;
 $menuHeight: 36px;
+$menuMidColor:#2c3e50;
 $subMenuBackColor: #EFEFEF;
 $subMenuForeColor: #000;
 $standardPadding: 15px;
 $standardMargin: 15px;
-$brandHeader:#00BF9F;
+$smallMargin: 5px;
+$smallPadding: 5px;
+$brandHeader: #00BF9F;
+$subMenuLinkHrefColor: $brand-primary; //Extens from bootstrap variables
+$subMenuSmallBackColor: #ecf0f1;
+$subMenuMidBackColor: #bdc3c7;
+$subMenuBigBackColor: #bdc3c7;
+$subMenuSmallSize: 20%;
+$subMenuMidSize: 25%;
+$subMenuBigSize: 35%;
+$standardFontSize: 14px;
+$bigFontSize: 16px;
+
+
 
 .topNav {
   &,
   ul,
+  h4,
   div.subMenu {
     padding: 0;
     margin: 0;
@@ -43,29 +58,109 @@ $brandHeader:#00BF9F;
       a.btn-ask {
         background: $brand-danger; //Extens from bootstrap variables (btn-danger)
         &:hover {
-          color:$menuForeColor;
+          color: $menuForeColor;
         }
       }
       a.btn-store {
         background: $brandHeader;
         &:hover {
-          color:$menuForeColor;
+          color: $menuForeColor;
         }
       }
       div.subMenu {
-        right:0;
-        padding: 5px; //no standart padding
+        right: 0;
         border: 1px solid $menuBackColor;
-        border-top:0;
+        border-top: 0;
         display: none;
         position: absolute;
         width: 100%;
+        height: auto;
         background-color: $subMenuBackColor;
-        color: $subMenuForeColor;
+        color:$subMenuForeColor;
+
+        .subColumnSmall,
+        .subColumnMid,
+        .subColumnBig {
+          display: table-cell;
+          padding: $smallPadding; //no standard padding
+          position: relative;
+          margin: 0;
+          vertical-align: top;
+          h4 {
+            color: $menuMidColor;
+            font-weight: bold;
+            font-size: $bigFontSize;
+            line-height: 2em;
+            border-bottom: 1px solid $menuMidColor;
+            margin-bottom: $smallMargin;
+          }
+          ul {
+            margin: 0;
+            padding: 0;
+            li {
+              display: block;
+              line-height: 1.3em;
+              a {
+                padding: 0;
+                margin: 0;
+                font-size: $standardFontSize;
+                color: $subMenuLinkHrefColor;
+                &:hover {
+                  color: $menuForeHoverColor;
+                }
+              }
+            }
+          }
+        }
+
+        & > .subColumnSmall:first-child {
+          background: #FFF; //Don't need set variable
+        }
+
+        .subColumnSmall {
+          background: $subMenuSmallBackColor;
+          width: $subMenuSmallSize;
+        }
+        .subColumnMid {
+          background: $subMenuMidBackColor;
+          width: $subMenuMidSize;
+        }
+        .subColumnBig {
+          background: $subMenuBigBackColor;
+          width: $subMenuBigSize;
+        }
+
+        .blogPost {
+          a {
+            margin-top: $smallPadding;
+            color:$menuMidColor;
+            line-height: 1.1em;
+            padding:0;
+          }
+        }
+
+
+      }
+      div.askMenu {
+        width: auto !important;
+        a {
+          padding: 0 !important;
+          margin: 0 !important;
+          img {
+            margin-top: $smallMargin; //no standard margin
+          }
+        }
+        a:first-child img {
+          margin-top: 0;
+        }
       }
       &:hover {
         a {
           color: $menuForeHoverColor;
+        }
+        a.btn-ask,
+        a.btn-store {
+          color: $menuForeColor;
         }
         div.subMenu {
           display: block;

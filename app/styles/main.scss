@@ -13,9 +13,13 @@ $icon-font-path: '../fonts/';
 $menuBackColor:#059DB8;
 $menuForeColor:#FFF;
 
+
+
+
 body {
   padding:0;
   margin:0;
+  position: relative;
 }
 
 .siteContainer {
